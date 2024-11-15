@@ -1,9 +1,9 @@
 package server
 
 import (
-	v1 "consumer-srv/api/helloworld/v1"
 	"consumer-srv/internal/conf"
 	"consumer-srv/internal/service"
+	v1 "kratos_first/consumer-srv-interface/api/helloworld/v1"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"

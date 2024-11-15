@@ -3,7 +3,7 @@ package biz
 import (
 	"context"
 
-	v1 "consumer-srv/api/helloworld/v1"
+	v1 "kratos_first/consumer-srv-interface/api/helloworld/v1"
 
 	"github.com/go-kratos/kratos/v2/errors"
 	"github.com/go-kratos/kratos/v2/log"

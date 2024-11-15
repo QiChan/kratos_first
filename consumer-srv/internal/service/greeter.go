@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	v1 "consumer-srv/api/helloworld/v1"
 	"consumer-srv/internal/biz"
+	v1 "kratos_first/consumer-srv-interface/api/helloworld/v1"
 
 	"github.com/go-kratos/kratos/contrib/registry/consul/v2"
 	"github.com/go-kratos/kratos/v2/log"

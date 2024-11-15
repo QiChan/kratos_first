@@ -1,7 +1,7 @@
 package server
 
 import (
-	v1 "provider-srv/api/helloworld/v1"
+	v1 "kratos_first/provider-srv-interface/api/helloworld/v1"
 	"provider-srv/internal/conf"
 	"provider-srv/internal/service"
 
