@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "../kratos_first"
+		}
+	],
+	"settings": {
+		"makefile.configureOnOpen": false
+	}
+}
