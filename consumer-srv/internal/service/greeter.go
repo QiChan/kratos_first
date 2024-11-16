@@ -1,31 +1,26 @@
 package service
 
 import (
-	"context"
-
 	"consumer-srv/internal/biz"
+	"context"
 	v1 "kratos_first/consumer-srv-interface/api/helloworld/v1"
+	"log"
 
 	"github.com/go-kratos/kratos/contrib/registry/consul/v2"
-	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
 	"github.com/hashicorp/consul/api"
 )
 
-// GreeterService is a greeter service.
 type GreeterService struct {
 	v1.UnimplementedGreeterServer
-
 	uc *biz.GreeterUsecase
 }
 
-// NewGreeterService new a greeter service.
 func NewGreeterService(uc *biz.GreeterUsecase) *GreeterService {
 	return &GreeterService{uc: uc}
 }
 
-// SayHello implements helloworld.GreeterServer.
-func (s *GreeterService) SayHello(ctx context.Context, in *v1.HelloRequest) (*v1.HelloReply, error) {
+func (s *GreeterService) SayHello(ctx context.Context, req *v1.HelloRequest) (*v1.HelloReply, error) {
 	consulConfig := api.DefaultConfig()
 	consulConfig.Address = "127.0.0.1:8500"
 	consulClient, err := api.NewClient(consulConfig)
@@ -56,5 +51,5 @@ func (s *GreeterService) SayHello(ctx context.Context, in *v1.HelloRequest) (*v1
 		}, nil
 	}
 
-	return &v1.HelloReply{Message: "grpc call from consumer to provider: " + resp.Message}, nil
+	return &v1.HelloReply{Message: "grpc call from  consumer to provider: " + resp.Message}, nil
 }
